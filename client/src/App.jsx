@@ -7,6 +7,7 @@ import SingleProduct from "./components/SingleProduct/SingleProduct";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Newsletter from "./components/Footer/Newsletter/Newsletter";
+import PageNotFound from "./components/NotFound/PageNotFound";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/category/:id" element={<Category />} />
         <Route path="/product/:id" element={<SingleProduct />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Newsletter />
       <Footer />
