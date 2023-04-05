@@ -17,16 +17,18 @@ const Header = () => {
           <li onClick={() => navigate("/about")}>About</li>
           <li>Categories</li>
         </ul>
-      </div>
-      <div className="center" onClick={() => navigate("/")}>
-        ShopGenius
-      </div>
-      <div className="right">
-        <TbSearch />
-        <AiOutlineHeart />
-        <span className="cart-icon">
-          <CgShoppingCart />
-        </span>
+
+        <div className="center" onClick={() => navigate("/")}>
+          ShopGenius
+        </div>
+        <div className="right">
+          <TbSearch />
+          <AiOutlineHeart />
+          <span className="cart-icon">
+            <CgShoppingCart />
+            <span>5</span>
+          </span>
+        </div>
       </div>
     </header>
   );
