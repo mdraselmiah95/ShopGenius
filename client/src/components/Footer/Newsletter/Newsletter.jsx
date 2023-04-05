@@ -20,16 +20,16 @@ const Newsletter = () => {
           Will be used in accordance with our Privacy Policy
         </span>
         <span className="social-icons">
-          <div className="icon">
+          <div className="icon linkedin">
             <FaLinkedinIn size={14} />
           </div>
-          <div className="icon">
+          <div className="icon facebook">
             <FaFacebookF size={14} />
           </div>
-          <div className="icon">
+          <div className="icon twitter">
             <FaTwitter size={14} />
           </div>
-          <div className="icon">
+          <div className="icon instagram">
             <FaInstagram size={14} />
           </div>
         </span>
