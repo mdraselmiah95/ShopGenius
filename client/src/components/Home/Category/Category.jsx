@@ -3,7 +3,7 @@ import cat1 from "../../../assets/category/cat-1.jpg";
 
 const Category = () => {
   return (
-    <div className="category-main-content">
+    <div className="shop-by-category">
       <div className="categories">
         <div className="category">
           <img src={cat1} alt="electronic item" />
