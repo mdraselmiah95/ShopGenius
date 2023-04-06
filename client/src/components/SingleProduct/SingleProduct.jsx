@@ -9,6 +9,7 @@ import {
 
 import "./SingleProduct.scss";
 import img from "../../assets/products/earbuds-prod-3.webp";
+import RelatedProducts from "./RelatedProducts/RelatedProducts";
 
 const SingleProduct = () => {
   return (
@@ -54,6 +55,7 @@ const SingleProduct = () => {
             </div>
           </div>
         </div>
+        <RelatedProducts />
       </div>
     </div>
   );
