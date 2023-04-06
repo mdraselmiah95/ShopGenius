@@ -32,12 +32,19 @@
       .c-item {
         display: flex;
         margin-bottom: 10px;
+
         svg {
           flex-shrink: 0;
           font-size: 14px;
           margin-right: 10px;
           margin-top: 4px;
+          cursor: pointer;
           color: rgba(0, 0, 0, 0.5);
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            transform: translateY(-3px);
+          }
         }
       }
       span {
