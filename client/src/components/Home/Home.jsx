@@ -1,7 +1,6 @@
 import Category from "./Category/Category";
 import Banner from "./Banner/Banner";
 import Products from "../Products/Products";
-s;
 import "./Home.scss";
 const Home = () => {
   return (

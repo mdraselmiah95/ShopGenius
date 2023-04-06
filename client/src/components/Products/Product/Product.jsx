@@ -9,8 +9,8 @@ const Product = () => {
         <img src={product} alt="product img" />
       </div>
       <div className="prod-details">
-        <span className="name">title</span>
-        <span className="price">&#8377;data.price</span>
+        <span className="name">Rockerz 550 Over Ear Bluetooth Headphone</span>
+        <span className="price">1790</span>
       </div>
     </div>
   );
