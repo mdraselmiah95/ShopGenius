@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "catagories",
+  "collectionName": "products",
   "info": {
-    "singularName": "catagory",
-    "pluralName": "catagories",
-    "displayName": "catagory"
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product"
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +15,10 @@
       "type": "string",
       "required": true
     },
+    "desc": {
+      "type": "text",
+      "required": true
+    },
     "img": {
       "allowedTypes": [
         "images",
@@ -23,14 +27,18 @@
         "audios"
       ],
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "required": true
     },
-    "products": {
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "catagories": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::product.product",
-      "mappedBy": "catagories"
+      "target": "api::catagory.catagory",
+      "inversedBy": "products"
     }
   }
 }
