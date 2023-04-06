@@ -1,7 +1,8 @@
 import Category from "./Category/Category";
 import Banner from "./Banner/Banner";
-import "./Home.scss";
 import Products from "../Products/Products";
+s;
+import "./Home.scss";
 const Home = () => {
   return (
     <div>
