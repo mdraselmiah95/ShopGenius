@@ -141,6 +141,35 @@
               margin: 0 5px;
             }
           }
+          .social-icons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .icon {
+              width: 30px;
+              height: 30px;
+              background: rgba(0, 0, 0, 0.8);
+              border-radius: 50%;
+              display: flex;
+              cursor: pointer;
+              align-items: center;
+              justify-content: center;
+              color: white;
+              transition: background-color 0.2s ease-in-out;
+              &.linkedin:hover {
+                background-color: #0077b5;
+              }
+              &.facebook:hover {
+                background-color: #3b5998;
+              }
+              &.twitter:hover {
+                background-color: #1da1f2;
+              }
+              &.instagram:hover {
+                background-color: #c13584;
+              }
+            }
+          }
         }
       }
     }

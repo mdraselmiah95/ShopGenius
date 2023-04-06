@@ -42,15 +42,21 @@ const SingleProduct = () => {
                 Category:
                 <span>product.categories</span>
               </span>
-              <span className="text-bold">
+
+              <span className="social-icons">
                 Share:
-                <span className="social-icons">
-                  <FaFacebookF size={16} />
-                  <FaTwitter size={16} />
-                  <FaInstagram size={16} />
-                  <FaLinkedinIn size={16} />
-                  <FaPinterest size={16} />
-                </span>
+                <div className="icon linkedin">
+                  <FaLinkedinIn size={14} />
+                </div>
+                <div className="icon facebook">
+                  <FaFacebookF size={14} />
+                </div>
+                <div className="icon twitter">
+                  <FaTwitter size={14} />
+                </div>
+                <div className="icon instagram">
+                  <FaInstagram size={14} />
+                </div>
               </span>
             </div>
           </div>
