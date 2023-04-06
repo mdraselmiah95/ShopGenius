@@ -41,14 +41,14 @@ const Header = () => {
           <div className="right">
             <TbSearch />
             <AiOutlineHeart />
-            <span className="cart-icon">
+            <span className="cart-icon" onClick={() => setShowCart(true)}>
               <CgShoppingCart />
               <span>5</span>
             </span>
           </div>
         </div>
       </header>
-      <Cart />
+      {showCart && <Cart setShowCart={setShowCart} />}
     </>
   );
 };
