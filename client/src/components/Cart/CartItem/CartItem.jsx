@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { Context } from "../../../utils/context";
 import { MdClose } from "react-icons/md";
 import "./CartItem.scss";
 import img from "../../../assets/products/earbuds-prod-2.webp";
@@ -16,7 +15,7 @@ const CartItem = () => {
           <MdClose className="close-btn" />
           <div className="quantity-buttons">
             <span>-</span>
-            <span>quantity</span>
+            <span>5</span>
             <span>+</span>
           </div>
           <div className="text">
