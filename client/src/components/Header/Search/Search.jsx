@@ -1,14 +1,19 @@
+import React, { useState } from "react";
 import { MdClose } from "react-icons/md";
 import "./Search.scss";
 
 import img from "../../../assets/products/earbuds-prod-2.webp";
 
 const Search = ({ setShowSearch }) => {
+  const handleSearchClose = () => {
+    setShowSearch(false);
+  };
+
   return (
     <div className="search-modal">
       <div className="form-field">
         <input autoFocus type="text" placeholder="Search for products" />
-        <MdClose className="close-btn" onClick={() => setShowSearch(false)} />
+        <MdClose className="close-btn" onClick={handleSearchClose} />
       </div>
       <div className="search-result-content">
         <div className="start-msg">
