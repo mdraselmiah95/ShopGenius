@@ -16,7 +16,7 @@ const Category = ({ catagories }) => {
               <div
                 className="category"
                 key={item.id}
-                // onClick={() => navigate(`/category/${item.id}`)}
+                onClick={() => navigate(`/category/${item.id}`)}
               >
                 <img
                   src={

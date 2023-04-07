@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchData } from "../utils/api";
 
 const useFetch = (endpoint) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
 
   useEffect(() => {
     makeApiCall();

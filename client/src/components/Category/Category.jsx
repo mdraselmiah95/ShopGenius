@@ -5,7 +5,8 @@ import useFetch from "../../hooks/useFetch";
 
 const Category = () => {
   const { id } = useParams();
-  const data = useFetch(
+
+  const { data } = useFetch(
     `/api/products?populate=*&[filters][categories][id]=${id}`
   );
   console.log(data);
@@ -13,7 +14,7 @@ const Category = () => {
     <div className="category-main-content">
       <div className="layout">
         <div className="category-title">category title</div>
-        <Products />
+        {/* <Products /> */}
       </div>
     </div>
   );

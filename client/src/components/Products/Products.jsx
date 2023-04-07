@@ -8,7 +8,7 @@ const Products = ({ products }) => {
         <Loader />
       ) : (
         <div className="products-container">
-          <div className="sec-heading">headingText</div>
+          <div className="sec-heading">Popular Products</div>
           <div className="products">
             {products?.data?.map((product) => (
               <Product key={product.id} product={product} />
