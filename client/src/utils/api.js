@@ -12,7 +12,6 @@ export const fetchData = async (url) => {
       process.env.VITE_REACT_APP_STRIPE_APP_DEV_URL + url,
       params
     );
-    console.log(data);
     return data;
   } catch (err) {
     console.log(err);

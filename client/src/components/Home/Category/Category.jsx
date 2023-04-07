@@ -1,22 +1,34 @@
 import "./Category.scss";
-import cat1 from "../../../assets/category/cat-1.jpg";
+import { ColorRing } from "react-loader-spinner";
 
-const Category = () => {
+const Category = ({ catagories }) => {
+  const { data } = catagories;
   return (
     <div className="shop-by-category">
       <div className="categories">
-        <div className="category">
-          <img src={cat1} alt="electronic item" />
-        </div>
-        <div className="category">
-          <img src={cat1} alt="electronic item" />
-        </div>
-        <div className="category">
-          <img src={cat1} alt="electronic item" />
-        </div>
-        <div className="category">
-          <img src={cat1} alt="electronic item" />
-        </div>
+        {data ? (
+          data.map((item) => (
+            <div className="category" key={item.id}>
+              <img
+                src={
+                  process.env.VITE_REACT_APP_STRIPE_APP_DEV_URL +
+                  item.attributes.img.data.attributes.url
+                }
+                alt={item.attributes.title}
+              />
+            </div>
+          ))
+        ) : (
+          <ColorRing
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="blocks-loading"
+            wrapperStyle={{}}
+            wrapperClass="blocks-wrapper"
+            colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+          />
+        )}
       </div>
     </div>
   );
