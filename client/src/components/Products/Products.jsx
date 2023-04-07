@@ -1,23 +1,12 @@
-import { Oval } from "react-loader-spinner";
 import Product from "./Product/Product";
 import "./Products.scss";
+import Loader from "../Loader/Loader";
 const Products = ({ products }) => {
   const { data } = products;
   return (
     <>
       {!data ? (
-        <Oval
-          height={80}
-          width={80}
-          color="#4fa94d"
-          wrapperStyle={{}}
-          wrapperClass=""
-          visible={true}
-          ariaLabel="oval-loading"
-          secondaryColor="#4fa94d"
-          strokeWidth={2}
-          strokeWidthSecondary={2}
-        />
+        <Loader />
       ) : (
         <div className="products-container">
           <div className="sec-heading">headingText</div>
