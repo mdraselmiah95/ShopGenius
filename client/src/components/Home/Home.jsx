@@ -11,7 +11,9 @@ const Home = () => {
   }, []);
 
   const getCatagories = () => {
-    fetchData("/api/categories").then((res) => console.log(res));
+    fetchData("/api/catagories?populate=*").then((res) =>
+      console.log(res.data)
+    );
   };
 
   return (
