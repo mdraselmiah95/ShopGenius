@@ -1,17 +1,23 @@
+import { useNavigate } from "react-router-dom";
 import Loader from "../../Loader/Loader";
 import "./Category.scss";
 
 const Category = ({ catagories }) => {
-  const { data } = catagories;
+  const navigate = useNavigate();
+
   return (
     <>
-      {!data ? (
+      {!catagories.data ? (
         <Loader />
       ) : (
         <div className="shop-by-category">
           <div className="categories">
-            {data.map((item) => (
-              <div className="category" key={item.id}>
+            {catagories?.data?.map((item) => (
+              <div
+                className="category"
+                key={item.id}
+                // onClick={() => navigate(`/category/${item.id}`)}
+              >
                 <img
                   src={
                     process.env.VITE_REACT_APP_STRIPE_APP_DEV_URL +
