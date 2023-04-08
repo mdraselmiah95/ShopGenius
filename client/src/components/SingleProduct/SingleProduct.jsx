@@ -87,18 +87,40 @@ const SingleProduct = () => {
 
                   <span className="social-icons">
                     Share:
-                    <div className="icon linkedin">
-                      <FaLinkedinIn size={14} />
+                    <div>
+                      <a
+                        href="https://www.linkedin.com/in/mdraselmiah15/"
+                        target="_blank"
+                        className="icon linkedin"
+                      >
+                        <FaLinkedinIn size={14} />
+                      </a>
                     </div>
-                    <div className="icon facebook">
-                      <FaFacebookF size={14} />
+                    <div>
+                      <a
+                        href="https://www.facebook.com/mdraselmiah15"
+                        target="_blank"
+                        className="icon facebook"
+                      >
+                        <FaFacebookF size={14} />
+                      </a>
                     </div>
-                    <div className="icon twitter">
-                      <FaTwitter size={14} />
+                    <div>
+                      <a
+                        href="https://twitter.com/raselmiah95"
+                        target="_blank"
+                        className="icon twitter"
+                      >
+                        <FaTwitter size={14} />
+                      </a>
                     </div>
-                    <div className="icon instagram">
+                    <a
+                      href="https://www.instagram.com/mdraselmia95/"
+                      target="_blank"
+                      className="icon instagram"
+                    >
                       <FaInstagram size={14} />
-                    </div>
+                    </a>
                   </span>
                 </div>
               </div>
