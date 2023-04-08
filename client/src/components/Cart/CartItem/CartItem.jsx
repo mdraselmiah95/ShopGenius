@@ -8,8 +8,6 @@ const CartItem = () => {
   const { cartItems, handleRemoveFromCart, handleCartProductQuantity } =
     useContext(Context);
 
-  console.log(cartItems);
-
   return (
     <>
       {!cartItems ? (
