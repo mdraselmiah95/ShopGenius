@@ -7,14 +7,17 @@ const Category = () => {
   const { id } = useParams();
 
   const { data } = useFetch(
-    `/api/products?populate=*&[filters][categories][id]=${id}`
+    `/api/products?populate=*&filters[catagories][id][$eq]=${id}`
   );
+
   console.log(data);
   return (
     <div className="category-main-content">
       <div className="layout">
-        <div className="category-title">category title</div>
-        {/* <Products /> */}
+        <div className="category-title">
+          {data?.data[0].attributes.catagories.data[0].attributes.title}
+        </div>
+        <Products products={data} />
       </div>
     </div>
   );

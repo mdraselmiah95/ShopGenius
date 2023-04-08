@@ -6,6 +6,7 @@ import {
   FaPinterest,
   FaCartPlus,
 } from "react-icons/fa";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 import "./SingleProduct.scss";
@@ -15,8 +16,22 @@ import useFetch from "../../hooks/useFetch";
 import Loader from "../Loader/Loader";
 
 const SingleProduct = () => {
+  const [quantity, setQuantity] = useState(1);
   const { id } = useParams();
   const { data } = useFetch(`/api/products?populate=*&[filters][id]=${id}`);
+
+  const decrement = () => {
+    setQuantity((prevState) => {
+      if (prevState === 1) return 1;
+      return prevState - 1;
+    });
+  };
+  const increment = () => {
+    setQuantity((prevState) => prevState + 1);
+  };
+
+  // console.log(data?.data?.[0].attributes.catagories.data?.[0].id);
+  //categoryId={product.categories.data[0].id}
 
   return (
     <>
@@ -36,9 +51,9 @@ const SingleProduct = () => {
 
                 <div className="cart-buttons">
                   <div className="quantity-buttons">
-                    <span>-</span>
-                    <span>{data.data?.[0].attributes.price}</span>
-                    <span>+</span>
+                    <span onClick={decrement}>-</span>
+                    <span>{quantity}</span>
+                    <span onClick={increment}>+</span>
                   </div>
                   <button className="add-to-cart-button">
                     <FaCartPlus size={20} />
@@ -76,7 +91,10 @@ const SingleProduct = () => {
                 </div>
               </div>
             </div>
-            <RelatedProducts />
+            <RelatedProducts
+            // categoryId={data?.data?.[0].attributes.catagories.data?.[0].id}
+            // productId={id}
+            />
           </div>
         </div>
       )}
