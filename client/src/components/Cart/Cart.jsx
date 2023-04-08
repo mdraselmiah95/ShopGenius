@@ -2,12 +2,32 @@ import { MdClose } from "react-icons/md";
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { BsArrowRightCircle, BsCartX } from "react-icons/bs";
+import { loadStripe } from "@stripe/stripe-js";
 import "./Cart.scss";
 import CartItem from "./CartItem/CartItem";
 import { Context } from "../../utils/context";
+import { makePaymentRequest } from "../../utils/api";
+
 const Cart = ({ setShowCart }) => {
   const navigate = useNavigate();
   const { cartItems, cartSubTotal } = useContext(Context);
+
+  const stripePromise = loadStripe(process.env.VITE_REACT_APP_PAYMENT_KEY);
+
+  const handlePayment = async () => {
+    try {
+      const stripe = await stripePromise;
+      const res = await makePaymentRequest.post("/api/orders", {
+        products: cartItems,
+      });
+      await stripe.redirectToCheckout({
+        sessionId: res.data.stripeSession.id,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="cart-panel">
       <div className="opac-layer"></div>
@@ -48,7 +68,9 @@ const Cart = ({ setShowCart }) => {
                 </span>
               </div>
               <div className="button">
-                <button className="checkout-cta">Checkout</button>
+                <button className="checkout-cta" onClick={handlePayment}>
+                  Checkout
+                </button>
               </div>
             </div>
           </>
