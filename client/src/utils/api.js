@@ -18,3 +18,10 @@ export const fetchData = async (url) => {
     return err;
   }
 };
+
+export const makePaymentRequest = axios.create({
+  baseURL: process.env.VITE_REACT_APP_STRIPE_APP_DEV_URL,
+  headers: {
+    Authorization: "bearer " + process.env.VITE_REACT_APP_PAYMENT_KEY,
+  },
+});
