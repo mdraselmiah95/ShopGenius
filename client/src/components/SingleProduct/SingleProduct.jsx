@@ -6,19 +6,19 @@ import {
   FaPinterest,
   FaCartPlus,
 } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
-
 import "./SingleProduct.scss";
-import img from "../../assets/products/earbuds-prod-3.webp";
 import RelatedProducts from "./RelatedProducts/RelatedProducts";
 import useFetch from "../../hooks/useFetch";
 import Loader from "../Loader/Loader";
+import { Context } from "../../utils/context";
 
 const SingleProduct = () => {
   const [quantity, setQuantity] = useState(1);
   const { id } = useParams();
   const { data } = useFetch(`/api/products?populate=*&[filters][id]=${id}`);
+  const { handleAddToCart } = useContext(Context);
 
   const decrement = () => {
     setQuantity((prevState) => {
@@ -58,7 +58,13 @@ const SingleProduct = () => {
                     <span>{quantity}</span>
                     <span onClick={increment}>+</span>
                   </div>
-                  <button className="add-to-cart-button">
+                  <button
+                    className="add-to-cart-button"
+                    onClick={() => {
+                      handleAddToCart(data.data?.[0], quantity);
+                      setQuantity(1);
+                    }}
+                  >
                     <FaCartPlus size={20} />
                     ADD TO CART
                   </button>
