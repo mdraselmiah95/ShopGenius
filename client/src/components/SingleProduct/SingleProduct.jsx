@@ -30,9 +30,6 @@ const SingleProduct = () => {
     setQuantity((prevState) => prevState + 1);
   };
 
-  // console.log(data?.data?.[0].attributes.catagories.data?.[0].id);
-  //categoryId={product.categories.data[0].id}
-
   return (
     <>
       {!data?.data ? (
@@ -42,7 +39,13 @@ const SingleProduct = () => {
           <div className="layout">
             <div className="single-product-page">
               <div className="left">
-                <img src={img} alt="product" />
+                <img
+                  src={
+                    process.env.VITE_REACT_APP_STRIPE_APP_DEV_URL +
+                    data?.data?.[0].attributes.img.data[0].attributes.url
+                  }
+                  alt={data.data?.[0].attributes.title}
+                />
               </div>
               <div className="right">
                 <span className="name">{data.data?.[0].attributes.title}</span>

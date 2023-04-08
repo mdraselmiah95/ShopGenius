@@ -10,7 +10,6 @@ const Category = () => {
     `/api/products?populate=*&filters[catagories][id][$eq]=${id}`
   );
 
-  console.log(data);
   return (
     <div className="category-main-content">
       <div className="layout">

@@ -21,7 +21,7 @@ const RelatedProducts = ({ categoryId, productId }) => {
     _limit: 4,
   });
 
-  console.log(data);
+  // console.log(data);
   return <div className="related-products">{/* <Products /> */}</div>;
 };
 export default RelatedProducts;
