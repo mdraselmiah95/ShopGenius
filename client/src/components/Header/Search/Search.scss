@@ -10,6 +10,12 @@
   background-color: white;
   transform: translateY(100%);
   animation: slideSearchWindow 0.5s ease forwards;
+  .loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+  }
   .form-field {
     width: 100%;
     display: flex;
