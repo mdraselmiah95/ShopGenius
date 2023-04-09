@@ -12,7 +12,9 @@ const Cart = ({ setShowCart }) => {
   const navigate = useNavigate();
   const { cartItems, cartSubTotal } = useContext(Context);
 
-  const stripePromise = loadStripe(process.env.VITE_REACT_APP_PAYMENT_KEY);
+  const stripePromise = loadStripe(
+    process.env.VITE_REACT_APP_STRIPE_PUBLISHABLE_KEY
+  );
 
   const handlePayment = async () => {
     try {
